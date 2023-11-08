@@ -6,6 +6,7 @@ import { EmpresaService } from 'src/app/servicios/empresa.service';
 import { EmpresaEditarComponent } from '../empresa-editar/empresa-editar.component';
 import { Pais } from 'src/app/entidades/pais';
 import { PaisService } from 'src/app/servicios/pais.service';
+import { DecidirComponent } from '../decidir/decidir.component';
 
 
 @Component({
@@ -105,6 +106,20 @@ export class EmpresaComponent implements OnInit {
         }
       });
 
+      dialogRef.afterClosed().subscribe(
+        datos => {
+          if (datos) {
+            this.empresaService.modificar(datos.empresa).subscribe(
+              respuesta => {
+                this.listar();
+                window.alert("Los datos de la Empresa fueron modificados");
+              }
+            );
+          }
+        }, error => {
+          window.alert(error.message)
+        }
+      );
     }
     else {
       window.alert("Debe seleccionar una Empresa");
@@ -112,7 +127,41 @@ export class EmpresaComponent implements OnInit {
   }
 
   public verificarEliminar() {
+    if (this.empresaSeleccionada != null) {
+      const dialogRef = this.dialogService.open(DecidirComponent, {
+        width: '400px',
+        height: '200px',
+        data: {
+          titulo: `Elimnando registro de la Empresa [${this.empresaSeleccionada.nombre}]`,
+          mensaje: "Está seguro?",
+          id: this.empresaSeleccionada.id,
+        }
+      });
 
+      dialogRef.afterClosed().subscribe(
+        datos => {
+          if (datos) {
+            this.empresaService.eliminar(datos.id).subscribe(
+              respuesta => {
+                if (respuesta == true) {
+                  this.listar();
+                  window.alert("Los datos de la Empresa fueron eliminados");
+                }
+                else {
+                  window.alert("No se pudo eliminar el registro de la empresa");
+                }
+              }
+            );
+          }
+        }, error => {
+          window.alert(error.message)
+        }
+      );
+
+    }
+    else {
+      window.alert("Debe seleccionar una Empresa");
+    }
   }
 
 

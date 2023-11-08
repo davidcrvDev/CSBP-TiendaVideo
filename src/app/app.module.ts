@@ -10,12 +10,14 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { EmpresaEditarComponent } from './componentes/empresa-editar/empresa-editar.component';
+import { DecidirComponent } from './componentes/decidir/decidir.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmpresaComponent,
-    EmpresaEditarComponent
+    EmpresaEditarComponent,
+    DecidirComponent
   ],
   imports: [
     BrowserModule,
