@@ -2,39 +2,39 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Empresa } from '../entidades/empresa';
+import { Titulo } from '../entidades/titulo';
 
 @Injectable({
   providedIn: 'root'
 })
-export class EmpresaService {
+export class TituloService {
 
   url: string;
 
   constructor(private http: HttpClient) {
-    this.url = `${environment.urlAPI}empresas`;
+    this.url = `${environment.urlAPI}titulos`;
 
   }
 
-  public listar(): Observable<Empresa[]> {
+  public listar(): Observable<Titulo[]> {
     let urlT = `${this.url}/listar`;
-    return this.http.get<Empresa[]>(urlT);
+    return this.http.get<Titulo[]>(urlT);
   }
 
 
-  public buscar(texto: string): Observable<Empresa[]> {
+  public buscar(texto: string): Observable<Titulo[]> {
     let urlT = `${this.url}/buscar/${texto}`;
-    return this.http.get<Empresa[]>(urlT);
+    return this.http.get<Titulo[]>(urlT);
   }
 
-  public agregar(empresa: Empresa): Observable<Empresa> {
+  public agregar(titulo: Titulo): Observable<Titulo> {
     let urlT = `${this.url}/agregar`;
-    return this.http.post<Empresa>(urlT, empresa);
+    return this.http.post<Titulo>(urlT, titulo);
   }
 
-  public modificar(empresa: Empresa): Observable<Empresa> {
+  public modificar(titulo: Titulo): Observable<Titulo> {
     let urlT = `${this.url}/modificar`;
-    return this.http.put<Empresa>(urlT, empresa);
+    return this.http.put<Titulo>(urlT, titulo);
   }
 
   public eliminar(id: number): Observable<boolean> {

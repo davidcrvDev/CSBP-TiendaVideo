@@ -60,7 +60,16 @@ export class EmpresaComponent implements OnInit {
   }
 
   public buscar() {
-
+    if (this.textoBusqueda.length > 0) {
+      this.empresaService.buscar(this.textoBusqueda).subscribe(
+        respuesta => {
+          this.empresas = respuesta;
+        }
+      );
+    }
+    else {
+      this.listar();
+    }
   }
 
   public agregar() {
