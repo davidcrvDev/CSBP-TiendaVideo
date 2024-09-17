@@ -1,0 +1,37 @@
+/* Centrar el diálogo */
+::ng-deep .mat-dialog-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Ajustar el tamaño del contenido de la ventana emergente */
+  .mat-dialog-content {
+    /*display: flex;*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 350px; /* Ajusta este valor si necesitas más o menos espacio */
+    padding: 15px;
+  }
+  
+  /* Ajustar el tamaño de los campos de formulario */
+  .mat-form-field {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  /* Estilo para los botones */
+  .mat-dialog-actions {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    width: 100%;
+  }
+  
+  .mat-button, .mat-raised-button {
+    min-width: 80px;
+  }
+  

@@ -23,12 +23,11 @@ export class TituloComponent implements OnInit {
 
   public columnas = [
     { name: 'Nombre', prop: 'nombre' },
-    { name: 'Año Pub.', prop: 'año' },
-    { name: 'Protagonistas', prop: 'protagonistas' },
-    { name: 'Productor', prop: 'productor' },
+    { name: 'Año', prop: 'ano' },
     { name: 'Director', prop: 'director' },
     { name: 'Empresa', prop: 'empresa.nombre' },
     { name: 'Precio', prop: 'precio' },
+    { name: 'Categoria', prop: 'categoria'}
   ];
   public modoColumna = ColumnMode;
   public tipoSeleccion = SelectionType;
@@ -79,10 +78,10 @@ export class TituloComponent implements OnInit {
   public agregar() {
     const dialogRef = this.dialogService.open(TituloEditarComponent, {
       width: '600px',
-      height: '500px',
+      height: '550px',
       data: {
         encabezado: "Agregando Titulo:",
-        titulo: new Titulo(0, "", 0, "", "", "", new Empresa(0, "", new Pais(0, "", "", "")), 0),
+        titulo: new Titulo(0, "", 0, "", new Empresa(0, "", new Pais(0, "", "", "")), 0, ""),
         empresas: this.empresas
       }
     });

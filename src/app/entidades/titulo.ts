@@ -4,31 +4,26 @@ export class Titulo {
 
     public id: number;
     public nombre: string;
-    public año: number;
     public ano: number;
-    public protagonistas: string;
-    public productor: string;
     public director: string;
     public empresa: Empresa | null;
     public precio: number;
+    public categoria: string;
 
     constructor(id: number,
         nombre: string,
-        año: number,
-        protagonistas: string,
-        productor: string,
+        ano: number,
         director: string,
         empresa: Empresa | null,
-        precio: number) {
+        precio: number,
+        categoria: string) {
         this.id = id;
         this.nombre = nombre;
-        this.año = año;
-        this.ano = año;
-        this.protagonistas = protagonistas;
-        this.productor = productor;
+        this.ano = ano;
         this.director = director;
         this.empresa = empresa;
         this.precio = precio;
+        this.categoria = categoria;
     }
 
 }

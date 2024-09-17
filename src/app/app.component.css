@@ -1,0 +1,35 @@
+.botonesBarra{
+    margin-left: auto; 
+    margin-right: 0;
+}
+
+mat-sidenav {
+    margin: 16px;
+    border-right: none;
+    background: #002b5c;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+img {
+    width: 30px;
+    height: 30px;
+    font-size: 24px;
+}
+
+  /* Estilos para el footer */
+.footer {
+    background-color: #002b5c; /* Color de fondo azul similar */
+    color: white;              /* Texto en color blanco */
+    text-align: center;         /* Alineación centrada del texto */
+    padding: 20px 0;            /* Espacio alrededor del texto */
+    font-size: 16px;            /* Tamaño de letra */
+    position: relative;         /* Mantiene el footer debajo del contenido */
+    bottom: 0;                  /* Anclado al final de la página */
+    width: 100%;                /* Asegura que el footer ocupe todo el ancho */
+}
+  
+.footer p {
+    margin: 5px;                /* Espaciado entre las líneas de texto */
+}

@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { EmpresaEditarComponent } from './componentes/empresa-editar/empresa-editar.component';
 import { DecidirComponent } from './componentes/decidir/decidir.component';
 import { TituloComponent } from './componentes/titulo/titulo.component';
+import { LoginComponent } from './componentes/login/login.component';
+import { TituloEditarComponent } from './componentes/titulo-editar/titulo-editar.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { TituloComponent } from './componentes/titulo/titulo.component';
     EmpresaComponent,
     EmpresaEditarComponent,
     DecidirComponent,
-    TituloComponent
+    TituloComponent,
+    TituloEditarComponent, 
+    LoginComponent
   ],
   imports: [
     BrowserModule,
