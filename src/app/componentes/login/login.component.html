@@ -1,15 +1,24 @@
-<h1 mat-dialog-title>Login</h1>
-<div mat-dialog-content>
-    <mat-form-field>
-        <mat-label>Usuario</mat-label>
-        <input matInput [(ngModel)]="datos.usuario">
-    </mat-form-field>
-    <mat-form-field>
-        <mat-label>Clave</mat-label>
-        <input type="password" matInput [(ngModel)]="datos.clave">
-    </mat-form-field>
-    <h5 class="forgot-password" (click)="onForgotPassword()">¿Has olvidado tu contraseña?</h5>
-</div>
-<div mat-dialog-actions>
-    <button mat-raised-button color="primary" [mat-dialog-close]="datos" cdkFocusInitial>Ingresar</button>
-</div>
+<app-login>
+    <router-outlet />
+    <form [formGroup]="loginform" (ngSubmit)="submit()">
+        <h1 mat-dialog-title>Login</h1>
+        <div mat-dialog-content>
+            <mat-form-field>
+                <mat-label>Usuario</mat-label>
+                <input matInput [(ngModel)]="datos.usuario" />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Clave</mat-label>
+                <input type="password" matInput [(ngModel)]="datos.clave" />
+            </mat-form-field>
+            <h5 class="forgot-password" (click)="onForgotPassword()">
+                ¿Has olvidado tu contraseña?
+            </h5>
+        </div>
+        <div mat-dialog-actions>
+            <button mat-raised-button color="primary" [mat-dialog-close]="datos" cdkFocusInitial>
+                Ingresar
+            </button>
+        </div>
+    </form>
+</app-login>

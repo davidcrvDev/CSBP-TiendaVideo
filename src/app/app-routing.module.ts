@@ -4,7 +4,7 @@ import { InicioComponent } from './componentes/inicio/inicio.component';
 import { EmpresaComponent } from './componentes/empresa/empresa.component';
 import { TituloComponent } from './componentes/titulo/titulo.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: "inicio", component: InicioComponent },
   { path: "empresa", component: EmpresaComponent },
   { path: "titulo", component: TituloComponent },
