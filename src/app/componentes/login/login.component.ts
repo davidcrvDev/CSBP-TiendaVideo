@@ -4,10 +4,10 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
-export interface DatosLogin {
-  usuario: "";
-  clave: "";
-}
+// export interface DatosLogin {
+//   usuario: "";
+//   clave: "";
+// }
 
 @Component({
   selector: 'app-login',
@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit{
   submit() {
     debugger;
     if (this.loginform.valid) {
-      console.log("formularo correcto");
+      console.log("formulario correcto");
     } else {
       console.log("formulario invalido");
       console.log("errores en el email: ", this.loginform.get('email')?.errors);
@@ -38,9 +38,9 @@ export class LoginComponent implements OnInit{
 
   @Input() public dialogRef = MatDialogRef<LoginComponent>;
 
-  constructor(
-    @Inject(MAT_DIALOG_DATA) public datos: DatosLogin
-  ) { }
+  // constructor(
+  //   @Inject(MAT_DIALOG_DATA) public datos: DatosLogin
+  // ) { }
 
   onForgotPassword() {
     console.log('Olvidé mi contraseña clickeado');
